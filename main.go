@@ -33,13 +33,15 @@ func (s *Server) readLoop(ws *websocket.Conn) {
 		msg := buf[:n]
 
 		fmt.Println(string(msg))
-		ws.Write([]byte("Thank you for the message!!\nmessage: " + string(msg)))
+		for client := range s.clients {
+			client.Write([]byte("Thank you for the message!!\nmessage: " + string(msg)))
+		}
 	}
 }
 
 func (s *Server) handleWS(ws *websocket.Conn) {
 	//on connection
-	fmt.Println("new incoming connection fomr client: ", ws.RemoteAddr())
+	fmt.Println("new incoming connection from client: ", ws.RemoteAddr())
 
 	s.clients[ws] = true
 

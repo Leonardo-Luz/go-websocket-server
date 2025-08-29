@@ -2,24 +2,21 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Glass Floor</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Websocket Client</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<main>
-		<h1>Glass Floor</h1>
-		<form enctype="multipart/form-data" action="http://localhost:8080/api/v1/uploads/" method="post">
-			<input type="file" name="image" />
-			<input type="submit" value="Upload" />
-		</form>
-		<div class="buttons">
-			<button onclick="clickHandler()">Send Message</button>
-		</div>
-	</main>
-	<script src="script.js"></script>
+  <main>
+    <h1>Websocket Client</h1>
+    <input type="text" name="message" placeholder="message..." />
+    <div class="buttons">
+      <button onclick="clickHandler()">Send Message</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 
 </html>
